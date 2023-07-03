@@ -43,6 +43,7 @@ using LeetCode._75Questions.Week4;
 //_207_Course_Schedule.Test();
 //_994_Rotting_Oranges.test();
 //_200_Number_of_Islands.test();
+_98_Validate_Binary_Search_Tree.Test();
 //_238_Product_of_Array_Except_Self.Test();
-_322_Coin_Change.Test();
+//_322_Coin_Change.Test();
 
