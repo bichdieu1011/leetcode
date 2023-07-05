@@ -9,7 +9,7 @@ namespace LeetCode._75Questions.Week2
             var list = CreateListNode(new[] { 1, 2, 3, 4, 5 });
             //var result = ReverseList(list);
             //ListNode head = null;
-            var result = ReverseList_Recursively( list);
+            var result = ReverseList( list);
 
             while (result != null)
             {
@@ -40,40 +40,26 @@ namespace LeetCode._75Questions.Week2
             return listNode;
         }
 
-        private static ListNode ReverseList(ListNode head)
+
+
+        private static ListNode ReverseList(ListNode recursively)
         {
-            if (head == null || head.next == null)
-                return head;
-
-            ListNode prev = null;
-            while (head != null)
-            {
-                var temp = head.next;
-                head.next = prev;
-                prev = head;
-                head = temp;
-            }
-
-            return prev;
-        }
-
-        private static ListNode ReverseList_Recursively(ListNode recursively)
-        {
-            if (recursively.next == null || recursively.next == null)
-            {
-                //head = recursively;
+            if (recursively == null || recursively.next == null)
                 return recursively;
-            }
 
-            ListNode prev = ReverseList_Recursively(recursively.next);
-            var temp = prev;
-            recursively.next = null;
-            while (prev.next != null) {
-                prev = prev.next;
+            var stacks = new Stack<ListNode>();
+            while (recursively != null)
+            {
+                stacks.Push(recursively);
+                recursively = recursively.next;
             }
-            prev.next = recursively;
-
-            return temp;
+            recursively = stacks.Peek();
+            while(stacks.Count > 1)
+            {
+                stacks.Pop().next = stacks.Peek();
+            }
+            stacks.Peek().next = null;
+            return recursively;
         }
     }
 }

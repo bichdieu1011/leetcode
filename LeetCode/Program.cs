@@ -3,6 +3,7 @@ using LeetCode;
 using LeetCode.BinarySearch;
 using LeetCode.BitManipulation;
 using LeetCode.DynamicPrograming;
+using LeetCode.DynamicPrograming.Knapsack;
 using LeetCode.LinkedList;
 using LeetCode.Plume;
 using LeetCode.SlidingWindow;
@@ -39,4 +40,6 @@ Console.WriteLine("Hello, World!");
 
 //Test1.Test();
 //Test2.Test();
-Test3.Test();
+//Test3.Test();
+
+_416_Partition_Equal_Subset_Sum.Test();

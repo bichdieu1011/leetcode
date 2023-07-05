@@ -4,13 +4,12 @@
     {
         public static void Test()
         {
-
-            //var nums = new int?[] { 1, 2,3 };//6
+            var nums = new int?[] { 1, 2, 3 };//6
             //var nums = new int?[] { -10, 9, 20, null, null, 15, 7 };//42
             //var nums = new int?[] { -3 };//-3
             //var nums = new int?[] { -2, 1 };//-1
-            //var nums = new int?[] { 2,-1,-2 };//2
-            var nums = new int?[] { -1, null, 9, null, null, -6, 3, null, null, null, null, null, null, null, -2 };//12
+            //var nums = new int?[] { 2, -1, -2 };//2
+            //var nums = new int?[] { -1, null, 9, null, null, -6, 3, null, null, null, null, null, null, null, -2 };//12
 
             var tree = new TreeNode(0, null, null);
             tree = CreateTreeNode(nums, 0);
@@ -62,14 +61,52 @@
                 return root.val;
             }
 
-
             var maxLeft = MaxPathSum(root.left, ref max);
             var maxRight = MaxPathSum(root.right, ref max);
-
 
             var res = Math.Max(maxLeft + root.val, Math.Max(root.val, maxRight + root.val));
             max = Math.Max(max, Math.Max(maxLeft + maxRight + root.val, res));
             return res;
+        }
+
+        private static int MaxPathSum_iterator(TreeNode root)
+        {
+            var stacks = new Stack<TreeNode>();
+            var weight = new Dictionary<TreeNode, int>();
+            stacks.Push(root);
+
+            int max = -1001;
+
+            while (stacks.Count > 0)
+            {
+                var node = stacks.Pop();
+                if (weight.ContainsKey(node))
+                {
+                    int maxLeft = -1001;
+                    int maxRight = -1001;
+                    if (node.left != null)
+                        maxLeft = weight[node.left];
+                    if (node.right != null)
+                        maxRight = weight[node.right];
+
+                    var maxNode = Math.Max(node.val + maxLeft, Math.Max(node.val + maxRight, node.val));
+                    max = Math.Max(max, Math.Max(maxNode, node.val + maxLeft + maxRight));
+                    weight[node] = maxNode;
+                }
+                else
+                {
+                    stacks.Push(node);
+                    weight.Add(node, 0);
+
+                    if (node.left != null)
+                        stacks.Push(node.left);
+
+                    if (node.right != null)
+                        stacks.Push(node.right);
+                }
+            }
+
+            return max;
         }
     }
 }
