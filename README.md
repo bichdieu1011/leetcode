@@ -2,7 +2,7 @@
 This repository contains my personal solutions to various LeetCode problems
 
 # About LeetCode
-LeetCode is a popular online platform that provides a wide range of coding problems to help developers enhance their algorithmic and coding skills. 
+LeetCode(https://leetcode.com/) is a popular online platform that provides a wide range of coding problems to help developers enhance their algorithmic and coding skills. 
 It offers a collection of algorithmic questions that cover various topics and difficulty levels.
 
 # License
