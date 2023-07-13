@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using LeetCode._75Questions;
+using LeetCode._75Questions.Interview;
 using LeetCode._75Questions.Week1;
 using LeetCode._75Questions.Week2;
 using LeetCode._75Questions.Week3;
@@ -48,6 +49,8 @@ using LeetCode._75Questions.Week5;
 //_238_Product_of_Array_Except_Self.Test();
 //_322_Coin_Change.Test();
 //_75_Sort_Colors.Test();
-_33_Search_in_Rotated_Sorted_Array.Test();
+//_33_Search_in_Rotated_Sorted_Array.Test();
+//Test1.Test();
+//Test2.Test();
 
 //Console.WriteLine(4*3*2*1);

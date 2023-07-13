@@ -5,37 +5,31 @@
         public static void Test()
         {
             //var res = LengthOfLIS(new[] { 1, 5, 2, 3, 4 });//4
-            var res = LengthOfLIS(new[] { 10, 9, 2, 5, 3, 7, 101, 18 });//4
+            var res = LengthOfLIS(new[] { 1, 3, 6, 7, 9, 4, 10, 5, });//6
+            //var res = LengthOfLIS(new[] { 10, 9, 2, 5, 3, 7, 101, 18 });//4
             //var res = LengthOfLIS(new[] { 0, 1, 0, 3, 2, 3 });//4
             Console.WriteLine(res);
         }
 
         private static int LengthOfLIS(int[] nums)
         {
-            var max = nums[0];
-            var min = nums[0];
-            var count = 1;
-            var maxcount = 1;
-            for (var i = 1; i < nums.Length; i++)
+            var higherLength = new int[nums.Length];
+            var max = 1;            
+            for (var i = nums.Length - 1; i >= 0; i--)
             {
-                if (nums[i] > max && nums[i] > min)
+                higherLength[i] = Math.Max(higherLength[i], 1);
+                for (var j = i - 1; j >= 0; j--)
                 {
-                    count++;
-                    max = nums[i];
-                    maxcount = maxcount > count ? maxcount : count;
-                }
-                else if (nums[i] < max && nums[i] > min)
-                {
-                    max = nums[i];
-
-                }
-                else if (nums[i] < max)
-                {
-                    count = nums[i] < min ? 1 : count;
-                    min = nums[i] < min ? min : nums[i];
+                    if (nums[i] > nums[j])
+                    {
+                        higherLength[j] = Math.Max(higherLength[i] + 1, higherLength[j]);
+                        max = max > higherLength[j] ? max : higherLength[j];
+                    }
                 }
             }
-            return maxcount;
+
+            return max;
         }
+
     }
 }

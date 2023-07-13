@@ -41,5 +41,6 @@ Console.WriteLine("Hello, World!");
 //Test1.Test();
 //Test2.Test();
 //Test3.Test();
+Pre_Screen.Test();
 
-_416_Partition_Equal_Subset_Sum.Test();
+//_416_Partition_Equal_Subset_Sum.Test();

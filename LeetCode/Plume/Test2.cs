@@ -16,7 +16,8 @@ namespace LeetCode.Plume
 
             //input = 892;//-1
             //input = Convert.ToInt32("1111111111111111", 2);//1
-            input = Convert.ToInt32("1010101", 2);//2
+            //input = Convert.ToInt32("1010101", 2);//2
+            input = Convert.ToInt32("101", 2);//2
 
             //input = Convert.ToInt32("110111101111101111011111011", 2);//11//116907771
             //input = Convert.ToInt32("111111111101000111111111010001", 2);//14
