@@ -13,8 +13,7 @@ using LeetCode.Trie;
 Console.WriteLine("Hello, World!");
 
 //Console.WriteLine(new ValidParentheses().IsValid("{"));
-//Console.WriteLine(new _1425ConstrainedSubsequenceSum().ConstrainedSubsetSum(new[] { -8269, 3217, -4023, -4138, -683, 6455, -3621, 9242, 4015, -3790 }, 1));
-
+//_1425ConstrainedSubsequenceSum.Test();
 //new _24SwapNodesInPairs().DoAction();
 //new _856ScoreOfParentheses().DoAction();
 //new _1358NumberOfSubstringsContainingAllThreeCharacters().DoAction();
@@ -41,6 +40,14 @@ Console.WriteLine("Hello, World!");
 //Test1.Test();
 //Test2.Test();
 //Test3.Test();
-Pre_Screen.Test();
+//Pre_Screen.Test();
+//_509_Fibonacci_Number.Test();
 
 //_416_Partition_Equal_Subset_Sum.Test();
+//_698_Partition_to_K_Equal_Sum_Subsets.Test();
+//_69_Sqrtx.Test();
+//_167_Two_Sum_II___Input_Array_Is_Sorted.Test();
+//_1351_Count_Negative_Numbers_in_a_Sorted_Matrix.Test();
+//_1876_Substrings_of_Size_Three_with_Distinct_Characters.Test();
+_140_Word_Break_II.Test();
+

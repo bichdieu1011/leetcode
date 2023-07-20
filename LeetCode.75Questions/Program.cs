@@ -6,6 +6,7 @@ using LeetCode._75Questions.Week2;
 using LeetCode._75Questions.Week3;
 using LeetCode._75Questions.Week4;
 using LeetCode._75Questions.Week5;
+using LeetCode._75Questions.Week6;
 
 
 //_1TwoSum.Test();
@@ -50,7 +51,15 @@ using LeetCode._75Questions.Week5;
 //_322_Coin_Change.Test();
 //_75_Sort_Colors.Test();
 //_33_Search_in_Rotated_Sorted_Array.Test();
+//_39_Combination_Sum.Test();
+//_56_Merge_Intervals.Test();
+//_46_Permutations.Test();
+//_981_Time_Based_Key_Value_Store.Test();
 //Test1.Test();
 //Test2.Test();
+//KBTG.Test();
+//_236_Lowest_Common_Ancestor_of_a_Binary_Tree.Test();
+//_721__Accounts_Merge.Test();
+_139_Word_Break.Test();
 
 //Console.WriteLine(4*3*2*1);

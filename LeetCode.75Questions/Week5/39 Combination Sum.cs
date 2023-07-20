@@ -7,74 +7,49 @@ namespace LeetCode._75Questions.Week5
         public static void Test()
         {
             //var input = new { candidate = new[] { 2, 3, 6, 7 }, target = 7 };
-            //var input = new { candidate = new[] { 2, 3, 5 }, target = 8 };
-            var input = new { candidate = new[] { 7, 3, 2 }, target = 18 };
+            var input = new { candidate = new[] { 2, 3, 5 }, target = 8 };
+            //var input = new { candidate = new[] { 7, 3, 2 }, target = 18 };
             //var input = new { candidate = new[] { 2 }, target = 1 };
 
             var result = CombinationSum(input.candidate, input.target);
             Console.WriteLine($"{JsonConvert.SerializeObject(input)}: {JsonConvert.SerializeObject(result)}");
         }
-        static IList<IList<int>> _res;
+
+        private static IList<IList<int>> _res;
+
         private static IList<IList<int>> CombinationSum(int[] candidates, int target)
         {
-            _res = new List<IList<int>>();
-            candidates = candidates.OrderBy(x => x).ToArray();
+            _res = new List<IList<int>>();           
 
             for (var i = 0; i < candidates.Length; i++)
             {
-                var tar = target - candidates[i];
-                if (tar == 0) _res.Add(new List<int>() { candidates[i] });
-                for (var j = i; j < candidates.Length; j++)
+                var temp = new List<int>() { candidates[i] };
+                if (target == candidates[i])
                 {
-                    var temp = new List<int>() { candidates[i], candidates[j] };
-                    if (pickCandidate(candidates, tar - candidates[j], j, temp))
-                    {
-                        //_res.Add(temp);
-                    }
-
+                    _res.Add(temp);
+                    continue;
                 }
+                pickCandidate(candidates, i, target - candidates[i], temp);
             }
 
             return _res;
         }
 
-        private static List<IList<int>> pickCandidate(int[] candidates, int target, int start)
+        private static void pickCandidate(int[] candidates, int start, int target, IList<int> potentials)
         {
-            var res = new List<IList<int>>();
-            for (var i = start; i < candidates.Length; i++)
-            {
-                var temp = new List<int>() { candidates[start] };
-                if (target < candidates[i])
-                    continue;
-
-                if (pickCandidate(candidates, target - candidates[i], start, temp))
-                {
-                    temp.Add(candidates[i]);
-                    res.Add(temp);
-                }
-
-            }
-            return res;
-        }
-        static bool pickCandidate(int[] candidates, int target, int start, IList<int> potentials)
-        {
-            if (target <= 0)
-                return target == 0;
+            if (target < 0) return;
 
             for (var i = start; i < candidates.Length; i++)
             {
-                if (target < candidates[i])
-                    continue;
-
-                if (pickCandidate(candidates, target - candidates[i], start, potentials))
+                var sol = new List<int>(potentials);
+                sol.Add(candidates[i]);
+                if (target == candidates[i])
                 {
-                    potentials.Add(candidates[i]);
-                    _res.Add(potentials);
+                    _res.Add(sol);
+                    continue;
                 }
-
+                pickCandidate(candidates, i, target - candidates[i], sol);
             }
-            return false;
         }
-
     }
 }

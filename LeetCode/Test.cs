@@ -89,6 +89,8 @@
         public string MyName { get; set; }
 
         string TellMeMyName();
+
+        
     }
 
     public interface IBasicTest
