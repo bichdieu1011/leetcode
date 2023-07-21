@@ -1,9 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeetCode.Trie
 {
@@ -20,10 +15,9 @@ namespace LeetCode.Trie
             Console.WriteLine(JsonConvert.SerializeObject(WordBreak("catsandog", new List<string> { "cats", "dog", "sand", "and", "cat" })));
             Console.WriteLine(JsonConvert.SerializeObject(WordBreak("a", new List<string> { "a" })));
             Console.WriteLine(JsonConvert.SerializeObject(WordBreak("abcd", new List<string> { "a", "abc", "b", "cd" })));
-
         }
 
-        static IList<string> WordBreak(string s, IList<string> wordDict)
+        private static IList<string> WordBreak(string s, IList<string> wordDict)
         {
             var trie = new Trie();
             foreach (var word in wordDict)
@@ -63,11 +57,11 @@ namespace LeetCode.Trie
             return subString[s.Length] == null ? new List<string>() : subString[s.Length];
         }
 
-
-        class Trie
+        private class Trie
         {
             public bool end = false;
             public Dictionary<char, Trie> childs;
+
             public Trie()
             {
                 childs = new Dictionary<char, Trie>();

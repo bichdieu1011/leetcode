@@ -60,6 +60,10 @@ using LeetCode._75Questions.Week6;
 //KBTG.Test();
 //_236_Lowest_Common_Ancestor_of_a_Binary_Tree.Test();
 //_721__Accounts_Merge.Test();
-_139_Word_Break.Test();
+//_139_Word_Break.Test();
+//_54_Spiral_Matrix.Test();
+//_62_Unique_Paths.Test();
+//_199_Binary_Tree_Right_Side_View.Test();
+_8_String_to_Integer__atoi_.Test();
 
 //Console.WriteLine(4*3*2*1);
