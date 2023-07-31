@@ -7,6 +7,7 @@ using LeetCode._75Questions.Week3;
 using LeetCode._75Questions.Week4;
 using LeetCode._75Questions.Week5;
 using LeetCode._75Questions.Week6;
+using LeetCode._75Questions.Week7;
 
 
 //_1TwoSum.Test();
@@ -64,6 +65,10 @@ using LeetCode._75Questions.Week6;
 //_54_Spiral_Matrix.Test();
 //_62_Unique_Paths.Test();
 //_199_Binary_Tree_Right_Side_View.Test();
-_8_String_to_Integer__atoi_.Test();
+//_8_String_to_Integer__atoi_.Test();
+//_11_Container_With_Most_Water.Test();
+//_17_Letter_Combinations_of_a_Phone_Number.Test();
+//_438_Find_All_Anagrams_in_a_String.Test();
+_146_LRU_Cache.Test();
 
 //Console.WriteLine(4*3*2*1);
