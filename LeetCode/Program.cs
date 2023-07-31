@@ -40,7 +40,7 @@ Console.WriteLine("Hello, World!");
 //Test1.Test();
 //Test2.Test();
 //Test3.Test();
-//Pre_Screen.Test();
+Pre_Screen.Test();
 //_509_Fibonacci_Number.Test();
 
 //_416_Partition_Equal_Subset_Sum.Test();
@@ -50,5 +50,6 @@ Console.WriteLine("Hello, World!");
 //_1351_Count_Negative_Numbers_in_a_Sorted_Matrix.Test();
 //_1876_Substrings_of_Size_Three_with_Distinct_Characters.Test();
 //_140_Word_Break_II.Test();
-_472_Concatenated_Words.Test();
+//_472_Concatenated_Words.Test();
+//_650_2_Keys_Keyboard.Test();
 

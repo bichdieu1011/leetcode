@@ -47,42 +47,33 @@
         {
             if (nums is null || nums.Length == 0) return 0;
 
-            var dict = new Dictionary<int, bool>();
+            var dict = new Dictionary<int, int>();
 
             foreach (var i in nums)
             {
                 if (!dict.ContainsKey(i))
-                    dict.Add(i, false);
+                    dict.Add(i, 0);
             }
 
             var maxLength = 0;
 
             foreach (var keyValuePair in dict)
             {
-                if (keyValuePair.Value) continue;
-
-                var count = 1;
-                var key = keyValuePair.Key - 1;
-                while (dict.ContainsKey(key))
-                {
-                    dict[key] = true;
-                    key--;
-                    count++;
-                }
-
-                key = keyValuePair.Key + 1;
-                while (dict.ContainsKey(key))
-                {
-                    dict[key] = true;
-
-                    key++;
-                    count++;
-                }
-
-                maxLength = Math.Max(maxLength, count);
+                var res = FindAndFill(dict, keyValuePair.Key);
+                maxLength = Math.Max(maxLength, res);
             }
 
             return maxLength;
+        }
+
+        static int FindAndFill(Dictionary<int, int> dict, int val)
+        {
+            if (!dict.ContainsKey(val)) return 0;
+            if (dict[val] != 0) return dict[val];
+
+
+            dict[val] = FindAndFill(dict, val + 1) + 1;
+            return dict[val];
         }
     }
 }
